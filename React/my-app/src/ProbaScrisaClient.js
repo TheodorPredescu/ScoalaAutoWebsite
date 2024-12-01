@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import { variables } from "./Variables";
 import "react-datepicker/dist/react-datepicker.css";
-import TimePicker from "react-time-picker";
 
 export class ProbaScrisaClient extends Component {
     constructor(props) {
@@ -10,6 +9,8 @@ export class ProbaScrisaClient extends Component {
         this.state = {
             probescrise : [],
             clienti : [],
+            trasee : [],
+            modalTitle: "",
             PrenumeClient  : "",
             NumeClient : "",
             CNP : "",
@@ -35,6 +36,13 @@ export class ProbaScrisaClient extends Component {
                 this.setState({clienti: data });
             });
     }
+    // refreshTraseuList() {
+    //     fetch(variables.API_URL + '/Client')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             this.setState({clienti: data });
+    //         });
+    // }
 
     componentDidMount() {
         this.refreshList();
@@ -48,7 +56,15 @@ export class ProbaScrisaClient extends Component {
         this.setState({ NumeClient: e.target.value });
     };
     changeCNP = (e) => {
-        this.setState({ CNP: e.target.value });
+        const selectedCNP = e.target.value;
+        const selectedClient = this.state.clienti.find(client => client.CNP === selectedCNP);
+
+        this.setState({ 
+            CNP: selectedCNP,
+            NumeClient: selectedClient ? selectedClient.Nume : "---1---",
+            PrenumeClient: selectedClient ? selectedClient.Prenume : "---1---",
+            IDClient: selectedClient ? selectedClient.IdClient : 0
+            }, () => console.log(this.state.IDClient));
     };
     changeIDClient = (e) => {
         this.setState({ IDClient: e.target.value });
@@ -69,6 +85,7 @@ export class ProbaScrisaClient extends Component {
 
     addClick() {
         this.setState({
+            modalTitle: "Adauga Proba Client",
             PrenumeClient: "",
             NumeClient: "",
             CNP: "",
@@ -82,6 +99,7 @@ export class ProbaScrisaClient extends Component {
 
     editClick(probascrisa) {
         this.setState({
+            modalTitle: "Edit Proba Client",
             PrenumeClient: probascrisa.PrenumeClient,
             NumeClient: probascrisa.NumeClient,
             CNP: probascrisa.CNP,
@@ -173,6 +191,7 @@ export class ProbaScrisaClient extends Component {
 
     render() {
         const {
+            modalTitle,
             PrenumeClient,
             NumeClient,
             CNP,
@@ -195,9 +214,9 @@ export class ProbaScrisaClient extends Component {
                 <table className="table table-striped">
                     <thead>
                         <tr>
+                            <th>CNP</th>
                             <th>Nume</th>
                             <th>Prenume</th>
-                            <th>CNP</th>
                             <th>Locul de sustinere a examenului</th>
                             <th>Data examenului</th>
                             <th>Durata examenului</th>
@@ -208,9 +227,9 @@ export class ProbaScrisaClient extends Component {
                     <tbody>
                         {probescrise.map(probescrise =>
                             <tr key={probescrise.IDProbaScrisa}>
+                                <td>{probescrise.CNP}</td>
                                 <td>{probescrise.NumeClient}</td>
                                 <td>{probescrise.PrenumeClient}</td>
-                                <td>{probescrise.CNP}</td>
                                 <td>{probescrise.LoculSustinere}</td>
                                 <td>{probescrise.DataInceperii}</td>
                                 <td>{probescrise.Durata}</td>
@@ -236,7 +255,9 @@ export class ProbaScrisaClient extends Component {
                     </tbody>
                 </table>
 
-                {/* <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+                 <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -244,84 +265,72 @@ export class ProbaScrisaClient extends Component {
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
+
+                            <div className="form-group mb-3">
+                                    <label>CNP-Client</label>
+                                    <select
+                                        className="form-control"
+                                        value={this.state.CNP || ""} // Default to 0 if no value
+                                        onChange={this.changeCNP}
+                                    >
+                                        <option value={""}>Selecteaza CNP</option>
+                                        {this.state.clienti.map(client => (
+                                            <option key={client.CNP} value={client.CNP}>
+                                                {client.CNP}
+                                            </option>
+                                            
+                                        ))}
+                                    </select>                                
+                                </div>
+                                
+                                <div className="form-group mb-3">
+                                    <label>Nume Client</label>
+                                    <input 
+                                        type="text" 
+                                        className="form-control" 
+                                        value={this.state.NumeClient || "---"} 
+                                        readOnly 
+                                    />
+                                </div>
+                                <div className="form-group mb-3">
+                                    <label>Prenume Client</label>
+                                    <input 
+                                        type="text" 
+                                        className="form-control" 
+                                        value={this.state.PrenumeClient || "---"} 
+                                        readOnly 
+                                    />
+                                </div>
+
                                 <div className="form-group mb-3">
                                     <label>Date Sedinta</label>
                                     <DatePicker
-                                        selected={DataSedinta}
-                                        onChange={this.changeDataSedinta}
+                                        selected={DataInceperii}
+                                        onChange={this.changeDataInceperii}
                                         className="form-control"
                                         dateFormat="dd/MM/yyyy"
                                     />
                                 </div>
-                                <div className="form-group mb-3">
-                                    <label>Tip Sedinta</label>
-                                    <select name={TipSedinta} value={TipSedinta} className="form-control mb-3" onChange={this.changeTipSedinta}>
-                                        <option value="T">Teoretica</option>
-                                        <option value="P">Practica</option>
-                                    </select>
-                                     // <input type="text" className="form-control"
-                                    //     value={TipSedinta} onChange={this.changeTipSedinta} /> 
-                                </div>
 
                                 <div className="form-group mb-3">
-                                    <label>Traseu</label>
-                                    <select
-                                        className="form-control"
-                                        value={this.state.TraseuID || 0} // Default to 0 if no value
-                                        onChange={this.changeTraseuID}
-                                    >
-                                        <option value={0}>Selecteaza Traseu</option>
-                                        {this.state.trasee.map(traseu => (
-                                            <option key={traseu.TraseuID} value={traseu.TraseuID}>
-                                                {traseu.DenumireLocatie}
-                                            </option>
-                                        ))}
-                                    </select>
+                                    <label>Durata Sedinta</label>
+                                    <input 
+                                        type="time" 
+                                        className="form-control" 
+                                        value={this.state.Durata || ""} 
+                                        onChange={this.changeDurata} 
+                                    />
+                                </div>
                                 
-                            </div>
                                 <div className="form-group mb-3">
-                                    <label>Zona locatie - informatii suplimentare</label>
+                                    <label>Locul sustinerii</label>
                                     <input type="text" className="form-control"
-                                        value={Locatie} onChange={this.changeLocatie} />
+                                        value={LoculSustinere} onChange={this.changeLoculSustinere} />
                                 </div>
-                                <div className="form-group mb-3">
-                                    <label>LocatieID</label>
-                                    <input type="number" className="form-control"
-                                        value={LocatieID} onChange={this.changeLocatieID} />
-                                </div>
-                                <div className="form-group mb-3">
-                                    <label>Instructor</label>
-                                    <input type="number" className="form-control"
-                                        value={IDInstructor} onChange={this.changeIdInstructor} />
-                                </div>
-                                <div className="form-group mb-3">
-                                    <label>Masina</label>
-                                    <input type="number" className="form-control"
-                                        value={CodMasina} onChange={this.changeCodMasina} />
-                                </div>
-                                <div className="form-group mb-3">
-                                    <label>Ora</label>
-                                    <div className="input-group">
-                                        <input
-                                            type="time"
-                                            className="form-control"
-                                            value={Durata}
-                                            onChange={this.handleChangeDurata} // Using your method
-                                            disableClock={true}
-                                            format={"HH:mm"}
-                                            style={{ textAlign: "center", width: "100%" }}
-                                            // step={1}
-                                        />
-                                    </div>
-                                </div>
-                                <div className="form-group mb-3">
-                                    <label>Client</label>
-                                    <input type="number" className="form-control"
-                                        value={IDClient} onChange={this.changeIDClient} />
-                                </div>
+
                             </div>
                             <div className="modal-footer">
-                                {IDSedintaClient === 0 ?
+                                {IDProbaScrisa === 0 ?
                                     <button type="button" className="btn btn-primary" onClick={() => this.createClick()}>
                                         Adauga
                                     </button> :
@@ -333,7 +342,7 @@ export class ProbaScrisaClient extends Component {
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div> 
             </div>
         );
     }

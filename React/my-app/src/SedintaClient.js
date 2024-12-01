@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import { variables } from "./Variables";
 import "react-datepicker/dist/react-datepicker.css";
-import TimePicker from "react-time-picker";
 
 export class SedintaClient extends Component {
     constructor(props) {

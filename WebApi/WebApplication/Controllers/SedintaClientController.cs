@@ -41,7 +41,11 @@ namespace WebApplication.Controllers
                 string query = @"
                 INSERT INTO dbo.SedintaClient 
                 (IDInstructor, CodMasina, Locatie, DataSedinta, Durata, TipSedinta, IDClient, LocatieID) 
-                VALUES (@IDInstructor, @CodMasina, @Locatie, @DataSedinta, @Durata, @TipSedinta, @IDClient, @LocatieID)";
+                VALUES (
+                (SELECT FROM dbo.Instructor WHERE )
+                @IDInstructor, 
+                @CodMasina, 
+                @Locatie, @DataSedinta, @Durata, @TipSedinta, @IDClient, @LocatieID)";
 
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["ScoalaAuto"].ConnectionString))
                 using (var cmd = new SqlCommand(query, con))
