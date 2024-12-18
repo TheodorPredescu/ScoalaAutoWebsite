@@ -90,7 +90,7 @@ export class ProbaScrisaClient extends Component {
             NumeClient: "",
             CNP: "",
             IDClient: 0,
-            LoculSustinere: "",
+        LoculSustinere: "",
             DataInceperii: new Date(),
             Durata: "",
             IDProbaScrisa: 0
