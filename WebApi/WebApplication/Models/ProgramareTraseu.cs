@@ -10,15 +10,24 @@ namespace WebApplication.Models
     public class ProgramareTraseu
     {
         public int IDProgramareTraseu { get; set; }           // Program scheduling ID
-        public string CNPClient { get; set; }                      // Client ID
+        public string CNPClient { get; set; }    // Client ID
+        public string NumeClient { get; set; }
+        public string PrenumeClient { get; set; }
         public int IDTraseu { get; set; }                     // Route ID
         public DateTime DataSustinerii { get; set; }          // Date of the assessment
-        public int CodMasina { get; set; }                     // Car code
+        public int CodMasina { get; set; }       // Car code
+        public string NumarMasina { get; set; }
+
         public string Localitatea { get; set; }
         public string NumeTraseu { get; set; }
         public string ZonaPlecare { get; set; }
         public TimeSpan DurataTraseu { get; set; }
+
+
         public int IDPolitist {  get; set; }
+        public string NumePolitist { get; set; }
+        public string PrenumePolitist { get; set; }
+        public string CNPPolitist { get; set; }
 
 
 //        select PT.IDProgramareTraseu,

@@ -281,7 +281,7 @@ export class ProbaScrisaClient extends Component {
                                             
                                         ))}
                                     </select>                                
-                                </div>
+                            </div>
                                 
                                 <div className="form-group mb-3">
                                     <label>Nume Client</label>

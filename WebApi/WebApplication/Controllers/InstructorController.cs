@@ -45,5 +45,43 @@ namespace WebApplication.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, table);
         }
 
+        [HttpGet]
+        public HttpResponseMessage Get(int id)
+        {
+            try
+            {
+                string query = @"
+                    SELECT 
+                        i.Nume, 
+                        i.Prenume, 
+                        i.CNP, 
+                        i.Adresa, 
+                        i.DataNastere, 
+                        i.DataContract, 
+                        i.Sex, 
+                        i.Salariu, 
+                        i.IDInstructor
+                    FROM dbo.Instructor i
+                    WHERE IDInstructor = @IDInstructor";
+
+                DataTable table = new DataTable();
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["ScoalaAuto"].ConnectionString))
+                using (var cmd = new SqlCommand(query, con))
+                using (var da = new SqlDataAdapter(cmd))
+                {
+                    cmd.Parameters.AddWithValue("@IDInstructor", id);  // Use the id parameter to identify the record to update
+                    cmd.CommandType = CommandType.Text;
+                    da.Fill(table);
+                }
+
+                return Request.CreateResponse(HttpStatusCode.OK, table);
+
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+                //return $"Failed to Update: {ex.Message}";
+            }
+        }
     }
 }

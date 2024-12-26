@@ -5,6 +5,7 @@ import {Client} from './Client';
 import { SedintaClient } from './SedintaClient';
 import { ProbaScrisaClient } from './ProbaScrisaClient';
 import { BrowserRouter, Route, NavLink, Routes} from 'react-router-dom';
+import { ProbaPracticaClient } from './ProbaPracticaClient';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             <li className="nav-item- m-2">
               <NavLink className="btn btn-light btn-outline-primary" to={"/proba-scrisa-client"}>Proba scrisa</NavLink>
             </li>
+            <li className="nav-item- m-2">
+              <NavLink className="btn btn-light btn-outline-primary" to={"/proba-practica-client"}>Proba practica</NavLink>
+            </li>
           </ul>
         </nav>
         <Routes>
@@ -34,6 +38,7 @@ function App() {
           <Route path="/client" element={<Client />} />
           <Route path="/sedinta-client" element={<SedintaClient />} />
           <Route path="/proba-scrisa-client" element={<ProbaScrisaClient />} />
+          <Route path="/proba-practica-client" element={<ProbaPracticaClient />} />
         </Routes>
     </div>
     </BrowserRouter>

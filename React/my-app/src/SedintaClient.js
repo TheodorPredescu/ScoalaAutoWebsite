@@ -8,6 +8,9 @@ export class SedintaClient extends Component {
         super(props);
         this.state = {
             sedinteclient: [],
+            cars: [],
+            clients: [],
+            instructors: [],
             trasee: [], // pentru conexiunea dintre TraseuID si LocatieID; functia get din SedintaClientController returneaza si trasee din TraseeSedinte,
                             //  dar nu e folosita si nu e stocata in sedintaclient
             modalTitle: "",
@@ -18,8 +21,8 @@ export class SedintaClient extends Component {
             IDInstructor: 0,
             CodMasina: 0,
             Durata: "00:01", // Default duration (can be updated)
-            IDClient: 0,
             LocatieID: 0,
+            IDClient: 0,
             // TraseuID: 0
         };
     }
@@ -38,10 +41,33 @@ export class SedintaClient extends Component {
                 this.setState({trasee: data });
             });
     }
-
+    refreshClientList() {
+        fetch(variables.API_URL + '/Client')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({clients: data });
+            });
+    }
+    refreshMasiniList() {
+        fetch(variables.API_URL + '/Masina')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({cars: data });
+            });
+    }
+    refreshInstructorList() {
+        fetch(variables.API_URL + '/Instructor')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({instructors: data });
+            });
+    }
     componentDidMount() {
-        this.refreshList();
+        this.refreshMasiniList();
         this.refreshTraseeList();
+        this.refreshClientList();
+        this.refreshInstructorList();
+        this.refreshList();
     }
 
     changeLocatieID = (e) => { 
@@ -58,10 +84,11 @@ export class SedintaClient extends Component {
     changeLocatie = (e) => {
         this.setState({ Locatie: e.target.value });
     };
-
+    
     changeIdInstructor = (e) => {
         this.setState({ IDInstructor: e.target.value });
-    };
+    }; 
+
 
     changeCodMasina = (e) => {
         this.setState({ CodMasina: e.target.value });
@@ -327,14 +354,39 @@ export class SedintaClient extends Component {
                                 </div> */}
                                 <div className="form-group mb-3">
                                     <label>Instructor</label>
-                                    <input type="number" className="form-control"
-                                        value={IDInstructor} onChange={this.changeIdInstructor} />
+                                     {/*<input type="number" className="form-control"
+                                        value={IDInstructor} onChange={this.changeIdInstructor} />*/}
+                                    <select
+                                        className="form-control"
+                                        value={this.state.IDInstructor || 0} // Default to 0 if no value
+                                        onChange={this.changeIdInstructor}
+                                    >
+                                        <option value={0}>Instructor-info</option>
+                                        {this.state.instructors.map(instructor => (
+                                            <option key={instructor.IDInstructor} value={instructor.IDInstructor}>
+                                                {` ${instructor.Nume} ${instructor.Prenume} - CNP: ${instructor.CNP}`}
+                                            </option>
+                                        ))}
+                                    </select> 
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>Masina</label>
-                                    <input type="number" className="form-control"
+                                    {/*<input type="number" className="form-control"
                                         value={CodMasina} onChange={this.changeCodMasina} 
-                                        disabled={TipSedinta === "T"}/>
+                                        disabled={TipSedinta === "T"}/>*/}
+                                    <select
+                                        className="form-control"
+                                        value={this.state.CodMasina || 0} // Default to 0 if no value
+                                        onChange={this.changeCodMasina}
+                                        disabled={TipSedinta === "T"}
+                                    >
+                                        <option value={0}>--------</option>
+                                        {this.state.cars.map(car => (
+                                            <option key={car.CodMasina} value={car.CodMasina}>
+                                                {` ${car.Numar} - ${car.Marca}, ${car.Model}`}
+                                            </option>
+                                        ))}
+                                    </select> 
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>Ora</label>
@@ -353,8 +405,20 @@ export class SedintaClient extends Component {
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>Client</label>
-                                    <input type="number" className="form-control"
-                                        value={IDClient} onChange={this.changeIDClient} />
+                                    {/*<input type="number" className="form-control"
+                                        value={IDClient} onChange={this.changeIDClient} />*/}
+                                    <select
+                                        className="form-control"
+                                        value={this.state.IDClient || 0} // Default to 0 if no value
+                                        onChange={this.changeIDClient}
+                                    >
+                                        <option value={0}>---</option>
+                                        {this.state.clients.map(client => (
+                                            <option key={client.IdClient} value={client.IdClient}>
+                                                {` ${client.Prenume} ${client.Nume} - CNP: ${client.CNP}`}
+                                            </option>
+                                        ))}
+                                    </select> 
                                 </div>
                             </div>
                             <div className="modal-footer">

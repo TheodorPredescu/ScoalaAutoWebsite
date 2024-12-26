@@ -179,6 +179,7 @@
     <Compile Include="Controllers\InformatiiSedintaController.cs" />
     <Compile Include="Controllers\InstructorController.cs" />
     <Compile Include="Controllers\MasinaController.cs" />
+    <Compile Include="Controllers\TraseeController.cs" />
     <Compile Include="Controllers\ProbaScrisa_ClientController.cs" />
     <Compile Include="Controllers\ProgramareTraseuController.cs" />
     <Compile Include="Controllers\SedintaClientController.cs" />
@@ -271,6 +272,7 @@
     <Folder Include="Views\InformatiiSedinta\" />
     <Folder Include="Views\Instructor\" />
     <Folder Include="Views\Masina\" />
+    <Folder Include="Views\ProbaFizica\" />
     <Folder Include="Views\ProbaScrisa_Client\" />
     <Folder Include="Views\ProgramareTraseu\" />
     <Folder Include="Views\TraseeSedinte\" />

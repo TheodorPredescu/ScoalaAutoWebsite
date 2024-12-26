@@ -37,12 +37,12 @@ namespace WebApplication.Controllers
         {
             try
             {
+                // (SELECT FROM dbo.Instructor WHERE )
                 // Define the query with parameter placeholders
                 string query = @"
                 INSERT INTO dbo.SedintaClient 
                 (IDInstructor, CodMasina, Locatie, DataSedinta, Durata, TipSedinta, IDClient, LocatieID) 
                 VALUES (
-                (SELECT FROM dbo.Instructor WHERE )
                 @IDInstructor, 
                 @CodMasina, 
                 @Locatie, @DataSedinta, @Durata, @TipSedinta, @IDClient, @LocatieID)";
