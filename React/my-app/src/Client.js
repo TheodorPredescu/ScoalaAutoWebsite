@@ -18,6 +18,7 @@ export class Client extends Component {
             Data_Nastere: new  Date(),
             Sex: "",
             Data_Instriere: new Date(),
+            Localitatea_Inscrierii: "",
         };
     }
 
@@ -26,6 +27,7 @@ export class Client extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({ clients: data });
+                console.log(data);
             });
     }
 
@@ -208,6 +210,7 @@ export class Client extends Component {
                             <th>Prenume</th>
                             <th>Adresa</th>
                             <th>Data</th>
+                            <th>Localitatea Sedintelor luate</th>
                             <th>Options</th>
                         </tr>
                     </thead>
@@ -218,6 +221,7 @@ export class Client extends Component {
                                 <td>{client.Prenume}</td>
                                 <td>{client.Adresa}</td>
                                 <td>{new Date(client.Data_Nastere).toLocaleDateString()}</td>
+                                <td>{client.Localitatea_Inscrierii ? client.Localitatea_Inscrierii : "-----"}</td>
                                 <td>
                                     <button type="button" className="btn btn-light mr-1"
                                         data-bs-toggle="modal" data-bs-target="#exampleModal"

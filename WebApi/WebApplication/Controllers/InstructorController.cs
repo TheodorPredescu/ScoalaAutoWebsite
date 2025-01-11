@@ -27,8 +27,9 @@ namespace WebApplication.Controllers
             i.DataContract, 
             i.Sex, 
             i.Salariu, 
-            i.IDInstructor
-        FROM dbo.Instructor i";
+            i.IDInstructor,
+            s.IDSedintaClient
+        FROM dbo.Instructor i inner join dbo.SedintaClient s on s.IDInstructor = i.IDInstructor";
 
             DataTable table = new DataTable();
 

@@ -17,10 +17,10 @@ namespace WebApplication.Controllers
         // GET: ProbaFizica
         public HttpResponseMessage GetProbaFizica()
         {
-            // SQL query to retrieve Instructor details
+            // ADDED DenumireLocatie!!
             string query = @"
-                        select Localitatea, NumeTraseu, ZonaPlecare, IDPolitist, DurataTraseu, IDTraseu
-	                from dbo.Traseu;";
+                        select T.Localitatea, T.NumeTraseu, T.ZonaPlecare, T.IDPolitist, T.DurataTraseu, T.IDTraseu, TS.DenumireLocatie
+	                from dbo.Traseu T inner join TraseeSedinte TS on T.IDTraseu = TS.TraseuID;";
 
             DataTable table = new DataTable();
 

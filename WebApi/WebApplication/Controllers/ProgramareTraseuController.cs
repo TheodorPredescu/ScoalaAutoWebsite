@@ -12,9 +12,10 @@ namespace WebApplication.Controllers
 {
     public class ProgramareTraseuController : ApiController
     {
-        public HttpResponseMessage GetNameClient()
+        [HttpGet]
+        [Route("api/ProgramareTraseu")]
+        public HttpResponseMessage GetAll()
         {
-//trebuie adaugat nume si prenume client + in clasa
             string query = @"
                 select PT.IDProgramareTraseu,
                         (select C.CNP
@@ -51,6 +52,52 @@ namespace WebApplication.Controllers
             using (var da = new SqlDataAdapter(cmd))
             {
                 cmd.CommandType = CommandType.Text;
+                da.Fill(table);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, table);
+        }
+        [HttpGet]
+        [Route("api/ProgramareTraseu/{data}")]
+        public HttpResponseMessage GetOne(String data)
+        {
+            string query = @"
+                select PT.IDProgramareTraseu,
+                        (select C.CNP
+                        from dbo.Client C
+                        where C.IDClient = PT.IDClient) as CNPClient,
+                        (select C.Nume
+                        from dbo.Client C
+                        where C.IDClient = PT.IDClient) as NumeClient,
+                        (select C.Prenume
+                        from dbo.Client C
+                        where C.IDClient = PT.IDClient) as PrenumeClient,
+		                PT.IDTraseu, PT.DataSustinerii, PT.CodMasina,
+		                T.Localitatea, T.NumeTraseu, T.ZonaPlecare, T.DurataTraseu,
+		                P.IDPolitist,
+                        (select pp.Nume
+                        from dbo.Politist pp
+                        where pp.IDPolitist = P.IDPolitist) as NumePolitist,
+                        (select pp.Prenume
+                        from dbo.Politist pp
+                        where pp.IDPolitist = P.IDPolitist) as PrenumePolitist,
+                        (select pp.CNP
+                        from dbo.Politist pp
+                        where pp.IDPolitist = P.IDPolitist) as CNPPolitist,
+                        (select m.Numar from dbo.Masina m where m.CodMasina = PT.CodMasina) as NumarMasina
+
+                from dbo.ProgramareTraseu PT inner join dbo.Traseu T on T.IDTraseu = PT.IDTraseu
+                    inner join dbo.Politist P on T.IDPolitist = P.IDPolitist
+                    inner join dbo.Masina M on M.CodMasina = PT.CodMasina
+                WHERE PT.DataSustinerii >= @data;
+                ";
+            DataTable table = new DataTable();
+            using (var con = new SqlConnection(ConfigurationManager.
+                ConnectionStrings["ScoalaAuto"].ConnectionString))
+            using (var cmd = new SqlCommand(query, con))
+            using (var da = new SqlDataAdapter(cmd))
+            {
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@data", data);
                 da.Fill(table);
             }
             return Request.CreateResponse(HttpStatusCode.OK, table);

@@ -14,11 +14,14 @@ namespace WebApplication.Controllers
 
     public class SedintaClientController : ApiController
     {
+        [HttpGet]
+        [Route("api/SedintaClient")]
         public HttpResponseMessage GetNameClient()
         {
             string query = @"
-                select Locatie, DataSedinta, TipSedinta, IDInstructor, CodMasina, Durata, TipSedinta, IDClient, IDSedintaClient, LocatieID from
-                dbo.SedintaClient
+                select cs.Locatie, cs.DataSedinta, cs.TipSedinta, cs.IDInstructor, cs.CodMasina, cs.Durata, cs.TipSedinta, cs.IDClient, cs.IDSedintaClient, cs.LocatieID,
+                            (select i.CNP from dbo.Instructor i where cs.IDInstructor = i.IDInstructor) as CNP_Instructor
+                from dbo.SedintaClient cs
                 ";
             DataTable table = new DataTable();
             using(var con=new SqlConnection(ConfigurationManager.

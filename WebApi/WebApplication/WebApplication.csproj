@@ -176,6 +176,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InformatiiProbaController.cs" />
     <Compile Include="Controllers\InformatiiSedintaController.cs" />
     <Compile Include="Controllers\InstructorController.cs" />
     <Compile Include="Controllers\MasinaController.cs" />
@@ -269,6 +270,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\InformatiiProba\" />
     <Folder Include="Views\InformatiiSedinta\" />
     <Folder Include="Views\Instructor\" />
     <Folder Include="Views\Masina\" />

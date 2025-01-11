@@ -14,16 +14,18 @@ namespace WebApplication.Controllers
     public class InformatiiSedintaController : ApiController
     {
         // GET: InformatiiSedinta
-        public HttpResponseMessage GetNameClient()
+        public HttpResponseMessage GetNameClient(String date)
         {
+            Console.WriteLine($"Received date: {date}");
             string query = @"
                 select C.IDClient,SC.IDSedintaClient, SC.TipSedinta, TS.DenumireLocatie, 
                         TS.Localitatea, SC.DataSedinta, I.IDInstructor, TS.DurataTraseu, 
                         M.Numar, M.Marca as Marca_Masina, M.Model as Model_Masina
                 from Instructor I inner join SedintaClient SC on I.IDInstructor = SC.IDInstructor
-                inner join TraseeSedinte TS on TS.TraseuID = SC.LocatieID
+                left join TraseeSedinte TS on TS.TraseuID = SC.LocatieID
                 inner join Client C on C.IDClient = SC.IDClient
-                inner join Masina M on M.CodMasina = SC.CodMasina;
+                left join Masina M on M.CodMasina = SC.CodMasina
+                where SC.DataSedinta >= @date;
                 ";
             DataTable table = new DataTable();
             using (var con = new SqlConnection(ConfigurationManager.
@@ -32,6 +34,8 @@ namespace WebApplication.Controllers
             using (var da = new SqlDataAdapter(cmd))
             {
                 cmd.CommandType = CommandType.Text;
+              
+                cmd.Parameters.AddWithValue("@date", date);
                 da.Fill(table);
             }
             return Request.CreateResponse(HttpStatusCode.OK, table);

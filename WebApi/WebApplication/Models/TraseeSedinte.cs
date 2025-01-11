@@ -11,6 +11,6 @@ namespace WebApplication.Models
         public string DenumireLocatie { get; set; }
         public string Localitatea { get; set; }
         public TimeSpan DurataTraseu { get; set; }
-
+        public string ZonaPlecare {  get; set; }
     }
 }

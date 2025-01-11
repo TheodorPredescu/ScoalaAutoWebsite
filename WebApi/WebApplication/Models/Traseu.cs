@@ -13,5 +13,6 @@ namespace WebApplication.Models
         public int IDPolitist { get; set; }                  // Policeman ID
         public TimeSpan DurataTraseu { get; set; }           // Route duration
         public int IDTraseu { get; set; }                    // Route ID
+        public string DenumireLocatie { get; set; }
     }
 }

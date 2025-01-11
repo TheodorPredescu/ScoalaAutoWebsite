@@ -3,36 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|c:\\users\\prede\\onedrive\\desktop\\acasa\\proiect_bazededate\\webapi\\webapplication\\controllers\\programaretraseucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\controllers\\programaretraseucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|c:\\users\\prede\\onedrive\\desktop\\acasa\\proiect_bazededate\\webapi\\webapplication\\controllers\\informatiiprobacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\controllers\\informatiiprobacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|c:\\users\\prede\\onedrive\\desktop\\acasa\\proiect_bazededate\\webapi\\webapplication\\models\\programaretraseu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\models\\programaretraseu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\webapplication\\controllers\\informatiisedintacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\controllers\\informatiisedintacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|c:\\users\\prede\\onedrive\\desktop\\acasa\\proiect_bazededate\\webapi\\webapplication\\models\\traseu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\models\\traseu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|c:\\users\\prede\\onedrive\\desktop\\acasa\\proiect_bazededate\\webapi\\webapplication\\controllers\\traseecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\controllers\\traseecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\webapplication\\controllers\\instructorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\controllers\\instructorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\webapplication\\controllers\\traseesedintecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\controllers\\traseesedintecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\webapplication\\controllers\\sedintaclientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\controllers\\sedintaclientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\ClientController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|solutionrelative:WebApplication\\Controllers\\ClientController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|c:\\users\\prede\\onedrive\\desktop\\acasa\\proiect_bazededate\\webapi\\webapplication\\models\\informatiisedinta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2F98918-C46B-444B-8B33-DAF47B7E35D1}|WebApplication\\WebApplication.csproj|solutionrelative:webapplication\\models\\informatiisedinta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,108 +22,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TraseeController.cs",
-              "DocumentMoniker": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\TraseeController.cs",
-              "RelativeDocumentMoniker": "WebApplication\\Controllers\\TraseeController.cs",
-              "ToolTip": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\TraseeController.cs",
-              "RelativeToolTip": "WebApplication\\Controllers\\TraseeController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T10:04:59.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Traseu.cs",
-              "DocumentMoniker": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Models\\Traseu.cs",
-              "RelativeDocumentMoniker": "WebApplication\\Models\\Traseu.cs",
-              "ToolTip": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Models\\Traseu.cs",
-              "RelativeToolTip": "WebApplication\\Models\\Traseu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T10:03:39.758Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProgramareTraseu.cs",
-              "DocumentMoniker": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Models\\ProgramareTraseu.cs",
-              "RelativeDocumentMoniker": "WebApplication\\Models\\ProgramareTraseu.cs",
-              "ToolTip": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Models\\ProgramareTraseu.cs",
-              "RelativeToolTip": "WebApplication\\Models\\ProgramareTraseu.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAwwBIAAAAvAAAAAAAAAA==",
+              "Title": "InformatiiSedintaController.cs",
+              "DocumentMoniker": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\InformatiiSedintaController.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Controllers\\InformatiiSedintaController.cs",
+              "ToolTip": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\InformatiiSedintaController.cs",
+              "RelativeToolTip": "WebApplication\\Controllers\\InformatiiSedintaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T09:53:57.356Z",
+              "WhenOpened": "2025-01-10T14:54:03.207Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProgramareTraseuController.cs",
-              "DocumentMoniker": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\ProgramareTraseuController.cs",
-              "RelativeDocumentMoniker": "WebApplication\\Controllers\\ProgramareTraseuController.cs",
-              "ToolTip": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\ProgramareTraseuController.cs*",
-              "RelativeToolTip": "WebApplication\\Controllers\\ProgramareTraseuController.cs*",
-              "ViewState": "AgIAABEAAAAAAAAAAAAswCgAAABqAAAAAAAAAA==",
+              "Title": "InformatiiProbaController.cs",
+              "DocumentMoniker": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\InformatiiProbaController.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Controllers\\InformatiiProbaController.cs",
+              "ToolTip": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\InformatiiProbaController.cs*",
+              "RelativeToolTip": "WebApplication\\Controllers\\InformatiiProbaController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T07:41:37.707Z",
+              "WhenOpened": "2025-01-11T22:14:23.499Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SedintaClientController.cs",
-              "DocumentMoniker": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\SedintaClientController.cs",
-              "RelativeDocumentMoniker": "WebApplication\\Controllers\\SedintaClientController.cs",
-              "ToolTip": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\SedintaClientController.cs",
-              "RelativeToolTip": "WebApplication\\Controllers\\SedintaClientController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwCsAAABpAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "InformatiiSedinta.cs",
+              "DocumentMoniker": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Models\\InformatiiSedinta.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Models\\InformatiiSedinta.cs",
+              "ToolTip": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Models\\InformatiiSedinta.cs",
+              "RelativeToolTip": "WebApplication\\Models\\InformatiiSedinta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T11:54:05.494Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InstructorController.cs",
-              "DocumentMoniker": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\InstructorController.cs",
-              "RelativeDocumentMoniker": "WebApplication\\Controllers\\InstructorController.cs",
-              "ToolTip": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\InstructorController.cs",
-              "RelativeToolTip": "WebApplication\\Controllers\\InstructorController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-22T20:02:51.892Z",
+              "WhenOpened": "2025-01-11T22:27:04.239Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TraseeSedinteController.cs",
-              "DocumentMoniker": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\TraseeSedinteController.cs",
-              "RelativeDocumentMoniker": "WebApplication\\Controllers\\TraseeSedinteController.cs",
-              "ToolTip": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\TraseeSedinteController.cs",
-              "RelativeToolTip": "WebApplication\\Controllers\\TraseeSedinteController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-22T20:02:13.085Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ClientController.cs",
-              "DocumentMoniker": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\ClientController.cs",
-              "RelativeDocumentMoniker": "WebApplication\\Controllers\\ClientController.cs",
-              "ToolTip": "C:\\Users\\prede\\OneDrive\\Desktop\\acasa\\Proiect_BazeDeDate\\WebApi\\WebApplication\\Controllers\\ClientController.cs",
-              "RelativeToolTip": "WebApplication\\Controllers\\ClientController.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAowAQAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T17:43:26.991Z"
             }
           ]
         }

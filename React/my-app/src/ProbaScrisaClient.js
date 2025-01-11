@@ -267,16 +267,16 @@ export class ProbaScrisaClient extends Component {
                             <div className="modal-body">
 
                             <div className="form-group mb-3">
-                                    <label>CNP-Client</label>
+                                    <label>Client</label>
                                     <select
                                         className="form-control"
                                         value={this.state.CNP || ""} // Default to 0 if no value
                                         onChange={this.changeCNP}
                                     >
-                                        <option value={""}>Selecteaza CNP</option>
+                                        <option value={""}>Selecteaza client</option>
                                         {this.state.clienti.map(client => (
                                             <option key={client.CNP} value={client.CNP}>
-                                                {client.CNP}
+                                                {`${client.Nume} ${client.Prenume} CNP: ${client.CNP}`}
                                             </option>
                                             
                                         ))}
@@ -284,7 +284,7 @@ export class ProbaScrisaClient extends Component {
                             </div>
                                 
                                 <div className="form-group mb-3">
-                                    <label>Nume Client</label>
+                                    <label>Nume</label>
                                     <input 
                                         type="text" 
                                         className="form-control" 
@@ -293,7 +293,7 @@ export class ProbaScrisaClient extends Component {
                                     />
                                 </div>
                                 <div className="form-group mb-3">
-                                    <label>Prenume Client</label>
+                                    <label>Prenume</label>
                                     <input 
                                         type="text" 
                                         className="form-control" 

@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import {AfisareSedinte} from './AfisareSedinte';
 import {Client} from './Client';
 import { SedintaClient } from './SedintaClient';
 import { ProbaScrisaClient } from './ProbaScrisaClient';
+import { AfisareProbe } from './AfisareProbe';
 import { BrowserRouter, Route, NavLink, Routes} from 'react-router-dom';
 import { ProbaPracticaClient } from './ProbaPracticaClient';
 
@@ -17,13 +17,16 @@ function App() {
         <nav className="navbar navbar-expand-sm bg-light navbar-light">
           <ul className="navbar-nav">
             <li className="nav-item- m-2">
-              <NavLink className="btn btn-light btn-outline-primary" to={"/afisare-sedinte"}>AfisareSedinte</NavLink>
+              <NavLink className="btn btn-light btn-outline-primary" to={"/afisare-sedinte"}>Afisare sedinte</NavLink>
             </li>
             <li className="nav-item- m-2">
-              <NavLink className="btn btn-light btn-outline-primary" to={"/client"}>Client</NavLink>
+              <NavLink className="btn btn-light btn-outline-primary" to={"/afisare-probe"}>Afisare probe</NavLink>
+              </li>
+            <li className="nav-item- m-2">
+              <NavLink className="btn btn-light btn-outline-primary" to={"/client"}>Lista clienti</NavLink>
             </li>
             <li className="nav-item- m-2">
-              <NavLink className="btn btn-light btn-outline-primary" to={"/sedinta-client"}>Sedinta Client</NavLink>
+              <NavLink className="btn btn-light btn-outline-primary" to={"/sedinta-client"}>Sedinte clienti</NavLink>
             </li>
             <li className="nav-item- m-2">
               <NavLink className="btn btn-light btn-outline-primary" to={"/proba-scrisa-client"}>Proba scrisa</NavLink>
@@ -34,6 +37,7 @@ function App() {
           </ul>
         </nav>
         <Routes>
+          <Route path="/afisare-probe" element={<AfisareProbe />} />
           <Route path="/afisare-sedinte" element={<AfisareSedinte />} />
           <Route path="/client" element={<Client />} />
           <Route path="/sedinta-client" element={<SedintaClient />} />

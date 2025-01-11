@@ -16,9 +16,11 @@ namespace WebApplication.Controllers
         public HttpResponseMessage GetNameClient()
         {
             string query = @"
-        select Nume, Prenume, Adresa, IDClient, DataNasterii, CNP, DataInscriere, Sex from
-        dbo.Client
-    ";
+        select c.Nume, c.Prenume, c.Adresa, c.IDClient, c.DataNasterii, c.CNP, c.DataInscriere, c.Sex ,
+		    (select top 1 sc.Locatie
+		    from dbo.SedintaClient sc
+		    where sc.IDClient = c.IDClient) as ""Localitatea_Inscrierii""
+        from dbo.Client c;";
             DataTable table = new DataTable();
             List<Client> clients = new List<Client>(); // Create a list to store client objects
 
@@ -43,7 +45,8 @@ namespace WebApplication.Controllers
                     Sex = row["Sex"].ToString(),
                     // Convert the date columns from the database to DateTime
                     Data_Nastere = Convert.ToDateTime(row["DataNasterii"]),
-                    Data_Instriere = Convert.ToDateTime(row["DataInscriere"])
+                    Data_Instriere = Convert.ToDateTime(row["DataInscriere"]),
+                    Localitatea_Inscrierii = row["Localitatea_Inscrierii"].ToString()
                 });
             }
 

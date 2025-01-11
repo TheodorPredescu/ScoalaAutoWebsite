@@ -15,10 +15,9 @@ namespace WebApplication.Controllers
     {
         public HttpResponseMessage GetTraseeSedinte()
         {
-            // Fix the query syntax (FROM clause was missing)
-            string query = @"
-                SELECT DenumireLocatie, Localitatea, DurataTraseu, TraseuID
-                FROM dbo.TraseeSedinte";  // Added 'FROM'
+            string query = @" 
+                SELECT ts.DenumireLocatie, ts.Localitatea, ts.DurataTraseu, ts.TraseuID, t.ZonaPlecare
+                FROM dbo.TraseeSedinte ts inner join dbo.Traseu t on t.IDTraseu = ts.TraseuID"; 
 
             DataTable table = new DataTable();
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["ScoalaAuto"].ConnectionString))

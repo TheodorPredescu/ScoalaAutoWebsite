@@ -15,5 +15,6 @@ namespace WebApplication.Models
         public string Sex { get; set; }
         public DateTime Data_Nastere { get; set; }
         public DateTime Data_Instriere { get; set; }
+        public string Localitatea_Inscrierii { get; set; }
     }
 }
