@@ -163,7 +163,7 @@ export class AfisareSedinte extends Component {
                           ? "Teoretica"
                           : "Practica"}
                       </td>
-                      <td>{infosedinte.DenumireLocatie}</td>
+                      <td>{infosedinte.TipSedinta ==="P" ? infosedinte.DenumireLocatie : "---"}</td>
                       <td>{traseu ? traseu.Localitatea : ""}</td>
                       <td>
                         {new Date(infosedinte.DataSedinta).toLocaleString(
@@ -188,10 +188,10 @@ export class AfisareSedinte extends Component {
 
                       {/* <td>{infosedinte.DataSedinta}</td> */}
                       {/* <td>{new Date(infosedinte.DataSedinta).toLocaleString()}</td> */}
-                      <td>{infosedinte.DurataTraseu}</td>
+                      <td>{infosedinte.TipSedinta ==="P" ? infosedinte.DurataTraseu : "---"}</td>
                       {/* <td>{traseu ? traseu.DurataTraseu : ""}</td> */}
-                      <td>{masina ? masina.Marca : ""}</td>
-                      <td>{masina ? masina.Model : ""}</td>
+                      <td>{infosedinte.TipSedinta ==="P" ? (masina ? masina.Marca : "---") : "---"}</td>
+                      <td>{infosedinte.TipSedinta ==="P" ? (masina ? masina.Model : "---") : "---"}</td>
                       {/* <td>
                                         <button type="button" className="btn btn-light"
                                             onClick={() => this.editClick(infosedinte)}>

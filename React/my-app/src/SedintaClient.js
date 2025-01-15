@@ -32,6 +32,7 @@ export class SedintaClient extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({ sedinteclient: data });
+                console.log(data);
             });
     }
     refreshTraseeList() {
@@ -39,6 +40,7 @@ export class SedintaClient extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({trasee: data });
+                console.log(data);
             });
     }
     refreshClientList() {
@@ -46,6 +48,7 @@ export class SedintaClient extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({clients: data });
+                console.log(data);
             });
     }
     refreshMasiniList() {
@@ -53,6 +56,7 @@ export class SedintaClient extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({cars: data });
+                console.log(data);
             });
     }
     refreshInstructorList() {
@@ -60,6 +64,7 @@ export class SedintaClient extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({instructors: data });
+                console.log(data);
             });
     }
     componentDidMount() {

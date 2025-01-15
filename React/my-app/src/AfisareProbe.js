@@ -59,7 +59,7 @@ export class AfisareProbe extends Component {
                         <td>{info_proba.ZonaPlecare_traseu ? info_proba.ZonaPlecare_traseu : "-"}</td>
                         </tr>
                 )})
-                };
+                }
                 {/* {info_probe.map((info_probe) => {
                   
                   return (

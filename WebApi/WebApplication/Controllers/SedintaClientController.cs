@@ -36,6 +36,7 @@ namespace WebApplication.Controllers
         }
 
         [HttpPost]
+        [Route("api/SedintaClient")]
         public string Post(SedintaClient sedintaClient)
         {
             try
@@ -133,6 +134,9 @@ namespace WebApplication.Controllers
               }
           }
            */
+
+        [HttpPut]
+        [Route("api/SedintaClient")]
         public string Put(SedintaClient sedintaClient)
         {
             try
